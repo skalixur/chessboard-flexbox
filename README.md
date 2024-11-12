@@ -1,3 +1,3 @@
-# Chessboard with Flexbox and With Grid
+# Chessboard with Flexbox
 
-This is a chessboard made with HTML, CSS, and JavaScript using both Flexbox and Grid as practice.
+This is a chessboard made with HTML, CSS, and JavaScript using Fl`exbox as practice.

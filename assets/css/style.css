@@ -7,7 +7,7 @@
 :root {
   --chessboard-white-square-color: #ebecd0;
   --chessboard-black-square-color: #779556;
-  --square-size: 100px;
+  --square-size: calc(100vmin / 8 - 1rem);
 }
 
 body {
@@ -28,15 +28,133 @@ body {
 }
 
 .flex-chessboard-item {
+  position: relative;
   height: var(--square-size);
   width: var(--square-size);
   background: var(--chessboard-black-square-color);
 }
 
+.piece-image {
+  user-select: none;
+  cursor: pointer;
+  height: 100%;
+  width: auto;
+}
+
+/* Alternate background square colors */
+
 .flex-chessboard-row:nth-child(even) .flex-chessboard-item:nth-child(even) {
   background: var(--chessboard-white-square-color);
+  color: var(--chessboard-black-square-color);
 }
 
 .flex-chessboard-row:nth-child(odd) .flex-chessboard-item:nth-child(odd) {
   background: var(--chessboard-white-square-color);
+  color: var(--chessboard-black-square-color);
+}
+
+/* Set all ::after's and ::before's of the first rank's and a file's properties */
+
+.flex-chessboard-row .flex-chessboard-item:nth-child(1)::after,
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item::before {
+  user-select: none;
+  font-size: clamp(0.5rem, 2vmin, 2rem);
+  font-family: 'Segoe UI';
+  font-weight: bold;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Set all ::before's on the first rank's position */
+
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item::before {
+  bottom: 5%;
+  right: 5%;
+}
+
+/* Set all ::after's on the a file's position*/
+
+.flex-chessboard-row .flex-chessboard-item:nth-child(1)::after {
+  top: 5%;
+  left: 5%;
+}
+
+/* Set color of odd and even labels */
+
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item:nth-child(odd)::before,
+.flex-chessboard-row:nth-child(even) .flex-chessboard-item:nth-child(1)::after {
+  color: var(--chessboard-white-square-color);
+}
+
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item:nth-child(even)::before,
+.flex-chessboard-row:nth-child(odd) .flex-chessboard-item:nth-child(1)::after {
+  color: var(--chessboard-black-square-color);
+}
+
+/* Set label contents for first rank */
+
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item:nth-child(1)::before {
+  content: 'a';
+}
+
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item:nth-child(2)::before {
+  content: 'b';
+}
+
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item:nth-child(3)::before {
+  content: 'c';
+}
+
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item:nth-child(4)::before {
+  content: 'd';
+}
+
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item:nth-child(5)::before {
+  content: 'e';
+}
+
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item:nth-child(6)::before {
+  content: 'f';
+}
+
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item:nth-child(7)::before {
+  content: 'g';
+}
+
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item:nth-child(8)::before {
+  content: 'h';
+}
+
+/* Set label contents for a file */
+
+.flex-chessboard-row:nth-child(1) .flex-chessboard-item:nth-child(1)::after {
+  content: '1';
+}
+
+.flex-chessboard-row:nth-child(2) .flex-chessboard-item:nth-child(1)::after {
+  content: '2';
+}
+
+.flex-chessboard-row:nth-child(3) .flex-chessboard-item:nth-child(1)::after {
+  content: '3';
+}
+
+.flex-chessboard-row:nth-child(4) .flex-chessboard-item:nth-child(1)::after {
+  content: '4';
+}
+
+.flex-chessboard-row:nth-child(5) .flex-chessboard-item:nth-child(1)::after {
+  content: '5';
+}
+
+.flex-chessboard-row:nth-child(6) .flex-chessboard-item:nth-child(1)::after {
+  content: '6';
+}
+
+.flex-chessboard-row:nth-child(7) .flex-chessboard-item:nth-child(1)::after {
+  content: '7';
+}
+
+.flex-chessboard-row:nth-child(8) .flex-chessboard-item:nth-child(1)::after {
+  content: '8';
 }
