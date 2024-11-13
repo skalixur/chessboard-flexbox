@@ -7,7 +7,7 @@
 :root {
   --chessboard-white-square-color: #ebecd0;
   --chessboard-black-square-color: #779556;
-  --square-size: calc(100vmin / 8);
+  --square-size: calc(100vmin / 10);
 }
 
 body {
@@ -35,6 +35,7 @@ body {
 }
 
 .piece-image {
+  display: block;
   user-select: none;
   cursor: pointer;
   height: 100%;
