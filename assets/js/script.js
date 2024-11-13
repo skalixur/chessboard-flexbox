@@ -65,7 +65,7 @@ function populateFlexChessboard(flexBoard) {
       if (currentSquare === '') continue
 
       let pieceImage = document.createElement('img')
-      pieceImage.src = `../assets/img/${currentSquare.slice(
+      pieceImage.src = `assets/img/${currentSquare.slice(
         0,
         5
       )}/${currentSquare}.png`

@@ -7,7 +7,7 @@
 :root {
   --chessboard-white-square-color: #ebecd0;
   --chessboard-black-square-color: #779556;
-  --square-size: calc(100vmin / 8 - 1rem);
+  --square-size: calc(100vmin / 8);
 }
 
 body {
@@ -58,7 +58,7 @@ body {
 .flex-chessboard-row .flex-chessboard-item:nth-child(1)::after,
 .flex-chessboard-row:nth-child(8) .flex-chessboard-item::before {
   user-select: none;
-  font-size: clamp(0.5rem, 2vmin, 2rem);
+  font-size: 2vmin;
   font-family: 'Segoe UI';
   font-weight: bold;
   position: absolute;
