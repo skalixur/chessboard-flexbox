@@ -46,12 +46,10 @@ body {
 
 .flex-chessboard-row:nth-child(even) .flex-chessboard-item:nth-child(even) {
   background: var(--chessboard-white-square-color);
-  color: var(--chessboard-black-square-color);
 }
 
 .flex-chessboard-row:nth-child(odd) .flex-chessboard-item:nth-child(odd) {
   background: var(--chessboard-white-square-color);
-  color: var(--chessboard-black-square-color);
 }
 
 /* Set all ::after's and ::before's of the first rank's and a file's properties */
